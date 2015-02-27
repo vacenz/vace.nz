@@ -22,7 +22,7 @@ var ReactExpressGenerator = yeoman.generators.Base.extend({
 		var prompts = [{
 			type: 'input',
 			name: 'projectName',
-			message: 'First, what is the name of your project?',
+			message: 'What is the name of your project?',
 			default: 'My React Project'
 		}, {
 			type: 'confirm',
@@ -48,6 +48,7 @@ var ReactExpressGenerator = yeoman.generators.Base.extend({
 			this.copy('editorconfig', '.editorconfig');
 			this.copy('gitignore', '.gitignore');
 			this.template('_package.json', 'package.json');
+			this.template('_gulpfile.js', '_gulpfile.js');
 		},
 		
 		clientfiles: function() {
