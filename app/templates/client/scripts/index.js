@@ -5,7 +5,7 @@ var Header = React.createClass({
 	render: function() {
 		return (
 			<div className="page-header">
-				<h1><%= projectName %></h1>
+				<h1>React Server app</h1>
 			</div>
 		);
 	}

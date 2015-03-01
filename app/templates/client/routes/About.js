@@ -1,9 +1,12 @@
 React = require('react');
+var Banner = require('../elements/Banner/Banner.js');
 
 var About = React.createClass({
 	render: function() {
 		return (
-			<p>About Page</p>
+      <SiteBoilerPlate>
+        <Banner bannerMessage="About Us"/>
+      </SiteBoilerPlate>
 		);
 	}
 });
