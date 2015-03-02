@@ -4,8 +4,11 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
+var wiredep = require('wiredep');
+
 
 module.exports = yeoman.generators.Base.extend({
+  
   constructor: function () {
     yeoman.generators.Base.apply(this, arguments);
 
@@ -37,45 +40,22 @@ module.exports = yeoman.generators.Base.extend({
     if (!this.options['skip-welcome-message']) {
       var welcome = 'Welcome to the React Server generator! ' +
                     'Out of the box I include  either CSS Skeleton or PureCSS ' +
-                    'jQuery, react.js, a gulpfile with Browserify magic, JSX compilation ' +
-                    'and SASS or LESS compilation. ' +
+                    'jQuery, react, a gulpfile with Browserify magic, JSX and SASS compilation ' +
                     'React Server gives a complete example of server-side rendering with React ' +
-                    'giving us components shared between server and browser for fast initial page loads ' +
+                    'giving components shared between server and browser for fast initial page loads ' +
                     'and search-engine-friendly pages.';      
       this.log(yosay(welcome));
     }
   },
 
-  cssFramework: function () {
-    var done = this.async();
-
-    var prompts = [{
-      type: 'list',
-      name: 'cssFramework',
-      message: 'Which CSS framework would you like to use?',
-      choices: [{
-        name: 'LESS',
-        value: 'LESS'
-      }, {
-        name: 'SASS',
-        value: 'SASS'
-      }]
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.cssFramework = props.cssFramework;
-      done();
-    }.bind(this));
-  },
-  
 
   writing: {
     gulpfile: function() {
-      this.template('_gulpfile.js', 'gulpfile.js');
+      this.copy('_gulpfile.js', 'gulpfile.js');
     },
 
     packageJSON: function() {
-      this.template('_package.json', 'package.json');
+      this.copy('_package.json', 'package.json');
     },
 
     git: function() {
@@ -91,39 +71,22 @@ module.exports = yeoman.generators.Base.extend({
     },
 
 		clientfiles: function() {
-      this.directory('client/images', 'client/images');
       this.copy('client/config.js', 'client/config.js');
       this.copy('client/favicon.ico', 'client/favicon.ico');
       this.copy('client/robots.txt', 'client/robots.txt');
-			this.template('client/scripts/index.js', 'client/scripts/index.js');
+      this.directory('client/images', 'client/images');
+			this.directory('client/scripts', 'client/scripts');
       this.directory('client/styles', 'client/styles');
 			this.directory('client/routes', 'client/routes');
 		},
 		
 		serverfiles: function() {
-			this.copy('server/server.js', 'server/server.js');
+			this.copy('server.js', 'server.js');
 			this.template('server/templates/views/_index.html', 'server/templates/views/index.html');
 		},
-		
-		publicfiles: function() {
-			this.directory('public', 'public');
-		},
-
-    mainStylesheet: function () {
-      // TODO do we need this
-      var css = 'main';
-
-      if (this.cssFramework === 'SASS') {
-        css += '.scss';
-      }
-      if (this.cssFramework === 'LESS') {
-        css += '.less';
-      }
-
-      this.copy('client/styles/' + css, 'client/styles/' + css);
-    }
     
   },
+
 
   install: function () {
 
@@ -145,21 +108,8 @@ module.exports = yeoman.generators.Base.extend({
         }
       });
     }.bind(this));
-  },
+  }
 
-	end: function() {
-		var chdir = this.createDirectory ? '"cd ' + this.projectKey + '" then ' : '';
-		this.log(
-			'\n' + chalk.green.underline('Your new React + Express project is ready!') +
-			'\n' +
-			'\n' + 'Your React app is in /client and your express app is in /server.' +
-			'\n' +
-			'\n' + 'Anything you place in /public will be served as static assets.' +
-			'\n' +
-			'\n' + 'Type ' + chdir + '"node server" to start the server.' +
-			'\n'
-		);
-	}
 
 });
 
