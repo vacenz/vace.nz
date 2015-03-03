@@ -71,18 +71,16 @@ module.exports = yeoman.generators.Base.extend({
     },
 
 		clientfiles: function() {
-      this.copy('client/config.js', 'client/config.js');
       this.copy('client/favicon.ico', 'client/favicon.ico');
       this.copy('client/robots.txt', 'client/robots.txt');
       this.directory('client/images', 'client/images');
-			this.directory('client/scripts', 'client/scripts');
       this.directory('client/styles', 'client/styles');
 			this.directory('client/routes', 'client/routes');
 		},
 		
 		serverfiles: function() {
 			this.copy('server.js', 'server.js');
-			this.template('server/templates/views/_index.html', 'server/templates/views/index.html');
+      this.directory('server', 'server');
 		},
     
   },
