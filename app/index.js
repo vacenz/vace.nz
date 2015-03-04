@@ -73,6 +73,7 @@ module.exports = yeoman.generators.Base.extend({
 		clientfiles: function() {
       this.copy('client/favicon.ico', 'client/favicon.ico');
       this.copy('client/robots.txt', 'client/robots.txt');
+      this.copy('client/client.jsx', 'client/client.jsx');
       this.directory('client/images', 'client/images');
       this.directory('client/styles', 'client/styles');
 			this.directory('client/routes', 'client/routes');

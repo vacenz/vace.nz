@@ -6,7 +6,7 @@ var express     = require('express');
 var browserify  = require('connect-browserify');
 var ReactAsync  = require('react-async');
 var nodejsx     = require('node-jsx').install({extension: '.jsx'});
-var App         = require('./client.jsx');
+var App         = require('./client/client.jsx');
 
 var development = process.env.NODE_ENV !== 'production';
 
@@ -34,7 +34,7 @@ var app = express();
 
 if (development) {
   app.get('/assets/bundle.js',
-    browserify('./client.jsx', {
+    browserify('./client/client.jsx', {
       debug: true,
       watch: true
     }));
