@@ -1,63 +1,16 @@
 {
-  "private": true,
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "main": "./server.js",
-  "browser": "./client.js",
-  "browserify": {
-    "transform": [
-      ["reactify", {"harmony": true}]
-    ]
-  },  
-  "dependencies": {
-    "express": "^4.11.1",
-    "fibers": "^1.0.5",
-    "node-jsx": "^0.12.4",
-    "react": "^0.12.2",
-    "react-async": "^2.0.1",
-    "react-router-component": "^0.23.3",
-    "superagent": "^0.21.0"
+  "name": "nodeapp",
+  "scripts": {
+    "build": "browserify -t reactify app.js -o public/bundle.js",
+    "start": "npm run build && node server.js"
   },
   "devDependencies": {
-    "connect": "^3.0.1",
-    "connect-livereload": "*",
-    "gulp-livereload": "^2.0.0",
-    "gulp": "^3.6.0",
-    "jquery": "*",
-    "reactify": "~0.15.2",
-    "react": "^0.12.0",
-    "react-router": "*",
-    "watchify": "*",
-    "vinyl-source-stream": "*",
-    "gulp-less": "*",
-    "gulp-ruby-sass": "*",
-    "gulp-plumber": "^0.6.3",
-    "gulp-autoprefixer": "^1.0.1",
-    "gulp-cache": "^0.2.2",
-    "gulp-jshint": "^1.5.3",
-    "jshint-stylish": "^1.0.0",
-    "gulp-uglify": "^1.0.1",
-    "gulp-minify-html": "^0.1.6", 
-    "gulp-size": "^1.1.0", 
-    "serve-static": "^1.4.0",
-    "serve-index": "^1.1.4",
-    "lazypipe": "^0.2.1",
-    "opn": "*",
-    "browserify": "^8.1.1",
-    "connect-browserify": "^3.2.1",
-    "envify": "^3.2.0",
-    "reactify": "^1.0.0",
-    "supervisor": "^0.6.0",
-    "uglify-js": "^2.4.16"
+    "browserify": "^7.0.0",
+    "reactify": "^0.17.1"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "supervisor -i node_modules -e js,jsx server.js",
-    "build": "NODE_ENV=production browserify ./ | uglifyjs -cm 2>/dev/null > ./assets/bundle.js",
-    "start-prod": "NODE_ENV=production node server.js",
-    "clean": "rm -f ./assets/bundle.js"
-  },
-  "author": "",
-  "license": "MIT"
+  "dependencies": {
+    "express": "^4.10.6",
+    "node-jsx": "^0.12.4",
+    "react": "^0.12.1"
+  }
 }

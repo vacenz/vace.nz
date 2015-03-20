@@ -6,7 +6,6 @@ var yosay = require('yosay');
 var chalk = require('chalk');
 var wiredep = require('wiredep');
 
-
 module.exports = yeoman.generators.Base.extend({
   
   constructor: function () {
@@ -58,30 +57,14 @@ module.exports = yeoman.generators.Base.extend({
       this.copy('_package.json', 'package.json');
     },
 
-    git: function() {
-      this.copy('gitignore', '.gitignore');
-    },
-
-    jshint: function () {
-      this.copy('jshintrc', '.jshintrc');
-    },
-
-    editorConfig: function () {
-      this.copy('editorconfig', '.editorconfig');
-    },
-
 		clientfiles: function() {
-      this.copy('client/favicon.ico', 'client/favicon.ico');
-      this.copy('client/robots.txt', 'client/robots.txt');
-      this.copy('client/client.jsx', 'client/client.jsx');
-      this.directory('client/images', 'client/images');
-      this.directory('client/styles', 'client/styles');
-			this.directory('client/routes', 'client/routes');
+      this.directory('public', 'public');
 		},
 		
 		serverfiles: function() {
 			this.copy('server.js', 'server.js');
-      this.directory('server', 'server');
+      this.copy('helper.js', 'helper.js');
+      this.copy('app.js', 'server.js');
 		},
     
   },

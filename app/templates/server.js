@@ -1,49 +1,21 @@
 'use strict';
 
-var path        = require('path');
-var url         = require('url');
-var express     = require('express');
-var browserify  = require('connect-browserify');
-var ReactAsync  = require('react-async');
-var nodejsx     = require('node-jsx').install({extension: '.jsx'});
-var App         = require('./client/client.jsx');
-
-var development = process.env.NODE_ENV !== 'production';
-
-function renderApp(req, res, next) {
-  var path = url.parse(req.url).pathname;
-  var app = App({path: path});
-  ReactAsync.renderToStringAsync(app, function(err, markup) {
-    if (err) {
-      return next(err);
-    }
-    res.send('<!doctype html>\n' + markup);
-  });
-}
-
-var api = express()
-  .get('/users/:username', function(req, res) {
-    var username = req.params.username;
-    res.send({
-      username: username,
-      name: username.charAt(0).toUpperCase() + username.slice(1)
-    });
-  });
+require('node-jsx').install();
+var express = require('express');
+var React = require('react');
+var APP = require('./app');
 
 var app = express();
+var port = 4572;
+var ip = '127.0.0.1';
 
-if (development) {
-  app.get('/assets/bundle.js',
-    browserify('./client/client.jsx', {
-      debug: true,
-      watch: true
-    }));
-}
+app.use('/public', express.static(__dirname + '/public'));
 
-app
-  .use('/assets', express.static(path.join(__dirname, 'assets')))
-  .use('/api', api)
-  .use(renderApp)
-  .listen(3000, function() {
-    console.log('Point your browser at http://localhost:3000');
-  });
+app.get('/', function(req, res) {
+  var markup = React.renderToString(APP());
+  res.send(markup);
+});
+
+app.listen(port,ip, function() {
+  console.log("Go to port " + port);
+});
