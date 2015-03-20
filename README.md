@@ -31,9 +31,9 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 
 [MIT license](http://opensource.org/licenses/MIT)
 
-![](app/templates/client/images/react.png)
-![](app/templates/client/images/gulp.png)
-![](app/templates/client/images/browserify.png)
-![](app/templates/client/images/jquery.png)
-![](app/templates/client/images/less.png)
-![](app/templates/client/images/sass.png)
+![](app/templates/public/images/react.png)
+![](app/templates/public/images/gulp.png)
+![](app/templates/public/images/browserify.png)
+![](app/templates/public/images/jquery.png)
+![](app/templates/public/images/less.png)
+![](app/templates/public/images/sass.png)
