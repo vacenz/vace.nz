@@ -19,8 +19,8 @@
 
 ## Getting Started
 
-- Install: `npm install -g generator-react-server`
-- `node server.js` To run the site 
+- `npm install -g generator-react-server` to install.
+- `node server.js` to run the site 
 - `gulp` to rebuild client side components with browserify.
 
 
