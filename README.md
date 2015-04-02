@@ -1,6 +1,6 @@
 > [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app using [gulp](http://gulpjs.com/) for the build process
 
-![](screenshot.png)
+![](screenshots/screenshot.png)
 
 ## Features
 
@@ -23,7 +23,8 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 
 [MIT license](http://opensource.org/licenses/MIT)
 
-![](app/templates/client/images/react.png)
-![](app/templates/client/images/gulp.png)
-![](app/templates/client/images/browserify.png)
-![](app/templates/client/images/fluxxor.png)
+
+![](screenshots/react.png)
+![](screenshots/gulp.png)
+![](screenshots/browserify.png)
+![](screenshots/fluxxor.png)
