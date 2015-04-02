@@ -39,11 +39,9 @@ module.exports = yeoman.generators.Base.extend({
 
     if (!this.options['skip-welcome-message']) {
       var welcome = 'Welcome to the React Server generator! ' +
-                    'Out of the box I include  either CSS Skeleton or PureCSS ' +
-                    'jQuery, react, a gulpfile with Browserify magic, JSX and SASS compilation ' +
                     'React Server gives a complete example of server-side rendering with React ' +
-                    'giving components shared between server and browser for fast initial page loads ' +
-                    'and search-engine-friendly pages.';      
+                    'allowing for components shared between server and browser for fast initial page loads ' +
+                    'and search-engine-friendly pages. Also includes a simple Flux architecture using Fluxxor';      
       this.log(yosay(welcome));
     }
   },
@@ -51,38 +49,24 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     gulpfile: function() {
-      this.copy('_gulpfile.js', 'gulpfile.js');
+      this.copy('gulpfile.js', 'gulpfile.js');
     },
 
     packageJSON: function() {
-      this.copy('_package.json', 'package.json');
+      this.copy('package.json', 'package.json');
     },
 
-    git: function() {
-      this.copy('gitignore', '.gitignore');
+    server: function() {
+      this.copy('server.js', 'server.js');
     },
 
-    jshint: function () {
-      this.copy('jshintrc', '.jshintrc');
-    },
-
-    editorConfig: function () {
-      this.copy('editorconfig', '.editorconfig');
-    },
-
-		clientfiles: function() {
-      this.copy('client/favicon.ico', 'client/favicon.ico');
-      this.copy('client/robots.txt', 'client/robots.txt');
-      this.copy('client/client.jsx', 'client/client.jsx');
-      this.directory('client/images', 'client/images');
-      this.directory('client/styles', 'client/styles');
-			this.directory('client/routes', 'client/routes');
+		public: function() {
+      this.directory('public', 'public');
 		},
 		
-		serverfiles: function() {
-			this.copy('server.js', 'server.js');
-      this.directory('server', 'server');
-		},
+    app: function() {
+      this.directory('app', 'app');
+    },
     
   },
 

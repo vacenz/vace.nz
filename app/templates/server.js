@@ -1,49 +1,37 @@
+/* server.js */
+
 'use strict';
 
-var path        = require('path');
-var url         = require('url');
-var express     = require('express');
-var browserify  = require('connect-browserify');
-var ReactAsync  = require('react-async');
-var nodejsx     = require('node-jsx').install({extension: '.jsx'});
-var App         = require('./client/client.jsx');
+var express = require('express'),
+    path = require('path'),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    favicon = require('serve-favicon'),
+    port = 3000,
+    ip = '127.0.0.1';
 
-var development = process.env.NODE_ENV !== 'production';
-
-function renderApp(req, res, next) {
-  var path = url.parse(req.url).pathname;
-  var app = App({path: path});
-  ReactAsync.renderToStringAsync(app, function(err, markup) {
-    if (err) {
-      return next(err);
-    }
-    res.send('<!doctype html>\n' + markup);
-  });
-}
-
-var api = express()
-  .get('/users/:username', function(req, res) {
-    var username = req.params.username;
-    res.send({
-      username: username,
-      name: username.charAt(0).toUpperCase() + username.slice(1)
-    });
-  });
-
+/* start the express app */
 var app = express();
+require("node-jsx").install();
 
-if (development) {
-  app.get('/assets/bundle.js',
-    browserify('./client/client.jsx', {
-      debug: true,
-      watch: true
-    }));
-}
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
-app
-  .use('/assets', express.static(path.join(__dirname, 'assets')))
-  .use('/api', api)
-  .use(renderApp)
-  .listen(3000, function() {
-    console.log('Point your browser at http://localhost:3000');
-  });
+/* ejs for templating */
+app.set('views', path.join(__dirname, 'app/views'));
+app.set('view engine', 'ejs');
+
+/* routes for the site */
+require('./app/routes/routes.js')(app);
+
+/* logging to the server */
+app.listen(port,ip, function() {
+  console.log("Go to " + ip + ":" + port);
+});
+
+/*
+app.listen(port, ip);
+console.log('Server is Up and Running at Port : ' + port);
+*/
