@@ -1,10 +1,15 @@
+## Generator React Server
+
 > [Yeoman](http://yeoman.io) generator that scaffolds out a front-end web app using [gulp](http://gulpjs.com/) for the build process
 
-![](screenshots/screenshot.png)
+![](screenshots/fluxxor.png)
+
+![](screenshots/react.png)
+![](screenshots/gulp.png)
+![](screenshots/browserify.png)
+
 
 ## Features
-
-Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date information on what we support.
 
 * React, A JavaScript library for building user interfaces
 * Flux: unidirectional data flow using Fluxxor 
@@ -22,9 +27,3 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT)
-
-![](screenshots/fluxxor.png)
-
-![](screenshots/react.png)
-![](screenshots/gulp.png)
-![](screenshots/browserify.png)
