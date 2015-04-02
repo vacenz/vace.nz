@@ -19,6 +19,7 @@
 
 ## Getting Started
 
+- `yo react-server` to run the yeoman generator.
 - `npm install -g generator-react-server` to install.
 - `node server.js` to run the site 
 - `gulp` to rebuild client side components with browserify.
