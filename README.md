@@ -8,6 +8,7 @@ Please see our [gulpfile.js](app/templates/gulpfile.js) for up to date informati
 
 * React, A JavaScript library for building user interfaces
 * Flux: unidirectional data flow using Fluxxor 
+* Server side rendering with React and Express
 * Module loading using CommonJs Browserify
 
 

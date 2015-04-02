@@ -6,7 +6,6 @@ var yosay = require('yosay');
 var chalk = require('chalk');
 var wiredep = require('wiredep');
 
-
 module.exports = yeoman.generators.Base.extend({
   
   constructor: function () {

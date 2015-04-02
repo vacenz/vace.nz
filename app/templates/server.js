@@ -30,8 +30,3 @@ require('./app/routes/routes.js')(app);
 app.listen(port,ip, function() {
   console.log("Go to " + ip + ":" + port);
 });
-
-/*
-app.listen(port, ip);
-console.log('Server is Up and Running at Port : ' + port);
-*/
