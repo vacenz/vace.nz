@@ -24,7 +24,6 @@
 - `node server.js` to run your site 
 - `gulp` to rebuild client side components with browserify.
 
-
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT)
+[MIT](http://isekivacenz.mit-license.org/)
