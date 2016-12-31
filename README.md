@@ -1,5 +1,17 @@
-## React Gmap
+# [vace.nz](http://vace.nz)
 
-## License
+Just a website for showing off some work...
 
-[MIT](http://isekivacenz.mit-license.org/)
+## Development
+
+```
+yarn install
+npm run dev
+open http://127.0.0.1:3000
+```
+
+## Production
+
+```
+npm run site
+```
