@@ -22,10 +22,10 @@ export default class Projects extends Component {
         <p>
           <span>Vacenz has worked on the following projects:</span>
           <br />
-          <a href="http://lastdraft.vace.nz">last draft</a>, <a href="http://reactcomponents.xyz">reactcomponents.xyz</a>, <a href="http://isekivace.nz/react-ui/">react ui</a>, <a href="http://cssmodul.es">cssmodul.es</a> and many more.
+          <a href="http://lastdraft.vace.nz">last draft</a>, <a href="http://pcmusi.cz">pcmusi.cz</a>, <a href="http://isekivace.nz/react-ui/">react ui</a>, <a href="http://cssmodul.es">cssmodul.es</a> and many more.
         </p>
 
-        <p>Contact <a href="https://github.com/StevenIseki">steven iseki martin</a> for more info and future work</p>
+        <p>Contact <a href="http://stevenisekimart.in">steven iseki martin</a> for more info and future work</p>
 
         <Swipr elementId="react-swipr-1">
           <li>
