@@ -242,6 +242,11 @@ li > strong:first-child {
 
 .swipr a {
   display: block;
+  border-bottom: none !important;
+}
+
+.swipr a:hover {
+  border-bottom: none !important;
 }
 
 .swipr_slides {

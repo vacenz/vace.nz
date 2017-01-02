@@ -20,17 +20,17 @@ export default class Projects extends Component {
         <p styleName='Highlight'>js, svg, css, ruby and julia.</p>
 
         <p>
-          <span>Isekivacenz has worked on the following projects:</span>
+          <span>Vacenz has worked on the following projects:</span>
           <br />
-          <a href="http://cssmodul.es">cssmodul.es</a>, <a href="http://reactcomponents.xyz">reactcomponents.xyz</a>, <a href="http://isekivace.nz/react-ui/">react ui</a>, <a href="https://github.com/isekivacenz/flurea">flurea</a> and many more.
+          <a href="http://lastdraft.vace.nz">last draft</a>, <a href="http://reactcomponents.xyz">reactcomponents.xyz</a>, <a href="http://isekivace.nz/react-ui/">react ui</a>, <a href="http://cssmodul.es">cssmodul.es</a> and many more.
         </p>
 
         <p>Contact <a href="https://github.com/StevenIseki">steven iseki martin</a> for more info and future work</p>
 
         <Swipr elementId="react-swipr-1">
           <li>
-            <a href="https://github.com/isekivacenz/polvena">polvena.js</a>
-            <p styleName='Highlight'>A webgl graphics library</p>
+            <a href="http://lastdraft.vace.nz">last draft</a>
+            <p styleName='Highlight'>A rich text editor built with Draft.js</p>
           </li>
           <li>
             <a href="http://isekivace.nz/react-ui/">react ui</a>
