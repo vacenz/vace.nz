@@ -6,3 +6,59 @@
   color: #fff;
   padding: 0.2rem;
 }
+
+.Main__Wrapper___UVfea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 550px;
+  margin: 60px;
+}
+
+.Main__Signature___2ZBqt {
+  color: #c3c3e5;
+  margin-top: 0.5em;
+  font-size: 2.0em;
+}
+
+.Main__Logo___3v0qs {
+  height: 0.8em;
+  width: 0.8em;
+  margin-bottom: -2px;
+}
+
+.Main__ColumnTriangle___2v64Z {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+.Main__ColumnHeading___1FZEV {
+  z-index: 100;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+/* mobile */
+@media (max-width: 468px) {
+  .Main__Wrapper___UVfea {
+    margin: 20px;
+  }
+}
+svg {
+  width: 300px;
+  height: 200px;
+}
+/* sm (larger than 768px) */
+@media (min-width: 768px) {
+  svg {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+svg {
+  visibility: hidden;
+}

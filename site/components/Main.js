@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Main.css'
 import CSSModules from 'react-css-modules'
-import Swipr from 'react-swipr'
+import Triangle from './Triangle'
 
 @CSSModules(styles, { allowMultiple: true })
 export default class Projects extends Component {
@@ -12,35 +12,31 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <div className='content'>
-        <div className='signature'>
-          v<img className="iseki-logo" src="http://i.imgur.com/0Hrq5CR.png" />cenz
+      <div styleName='Wrapper'>
+
+        <div styleName='ColumnHeading'>
+          <div styleName='Signature'>
+            v<img styleName="Logo" src="http://i.imgur.com/0Hrq5CR.png" />cenz
+          </div>
+
+          <p styleName='Highlight'>js, svg, css, ruby and julia.</p>
+          <p>
+            <span>Vacenz has worked on the following projects:</span>
+            <br />
+            <a href="http://lastdraft.vace.nz">last draft</a>,
+            <a href="http://pcmusi.cz">pcmusi.cz</a>,
+            <a href="http://isekivace.nz/react-ui/">react ui</a>,
+            <a href="http://cssmodul.es">cssmodul.es</a> and many more.
+          </p>
+
+          <p>Contact <a href="http://stevenisekimart.in">steven iseki martin</a> for more info and future work</p>
         </div>
 
-        <p styleName='Highlight'>js, svg, css, ruby and julia.</p>
 
-        <p>
-          <span>Vacenz has worked on the following projects:</span>
-          <br />
-          <a href="http://lastdraft.vace.nz">last draft</a>, <a href="http://pcmusi.cz">pcmusi.cz</a>, <a href="http://isekivace.nz/react-ui/">react ui</a>, <a href="http://cssmodul.es">cssmodul.es</a> and many more.
-        </p>
+        <div styleName='ColumnTriangle'>
+          <Triangle />
+        </div>
 
-        <p>Contact <a href="http://stevenisekimart.in">steven iseki martin</a> for more info and future work</p>
-
-        <Swipr elementId="react-swipr-1">
-          <li>
-            <a href="http://lastdraft.vace.nz">last draft</a>
-            <p styleName='Highlight'>A rich text editor built with Draft.js</p>
-          </li>
-          <li>
-            <a href="http://isekivace.nz/react-ui/">react ui</a>
-            <p styleName='Highlight'>A set of react ui components</p>
-          </li>
-          <li>
-            <a href="https://github.com/StevenIseki/ocarin">ocarin</a>
-            <p styleName='Highlight'>simple, beautiful deku components</p>
-          </li>
-        </Swipr>
       </div>
     )
   }

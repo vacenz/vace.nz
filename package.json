@@ -4,7 +4,8 @@
   "description": "Website for seavae",
   "main": "site/index.js",
   "scripts": {
-    "site": "npm run clean && NODE_ENV=prod webpack --config site/webpack.config.prod",
+    "site": "npm run clean && npm run css && NODE_ENV=prod webpack --config site/webpack.config.prod",
+    "css": "cp -r site/styles/*.css site/public",
     "clean": "rm public/bundle.js && rm public/style.css && rm public/vendor.js || true",
     "dev": "NODE_ENV=dev webpack-dev-server --port 3000 --inline --hot --config site/webpack.config"
   },
@@ -38,7 +39,6 @@
     "react": ">=15.3.1",
     "react-css-modules": "^4.1.0",
     "react-dom": ">=15.3.1",
-    "react-swipr": "^2.0.6",
     "style-loader": "^0.13.1",
     "webpack": "2.1.0-beta.27",
     "webpack-dev-server": "2.1.0-beta.12"

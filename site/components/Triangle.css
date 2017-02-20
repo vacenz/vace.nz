@@ -1,0 +1,15 @@
+svg {
+  width: 300px;
+  height: 200px;
+}
+/* sm (larger than 768px) */
+@media (min-width: 768px) {
+  svg {
+    width: 400px;
+    height: 300px;
+  }
+}
+
+svg {
+  visibility: hidden;
+}

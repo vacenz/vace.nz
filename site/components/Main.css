@@ -4,3 +4,37 @@
   color: #fff;
   padding: 0.2rem;
 }
+
+.Wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 550px;
+  margin: 60px;
+}
+
+.Signature {
+  color: #c3c3e5;
+  margin-top: 0.5em;
+  font-size: 2.0em;
+}
+
+.Logo {
+  height: 0.8em;
+  width: 0.8em;
+  margin-bottom: -2px;
+}
+
+.ColumnTriangle {
+  flex: 0 0 100%;
+}
+.ColumnHeading {
+  z-index: 100;
+  flex: 0 0 100%;
+}
+
+/* mobile */
+@media (max-width: 468px) {
+  .Wrapper {
+    margin: 20px;
+  }
+}
