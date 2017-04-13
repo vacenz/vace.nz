@@ -24,9 +24,8 @@ export default class Projects extends Component {
             <span>Vacenz has worked on the following projects:</span>
             <br />
             <a href="http://lastdraft.xyz">last draft</a>,
-            <a href="http://starjs.ooi">starjs</a>,
-            <a href="http://trac.kz">trac.kz</a>
-            and many more.
+            <a href="http://starjs.ooo">starjs</a>,
+            <a href="http://trac.kz">trac.kz</a> and many more.
           </p>
 
           <p>Contact <a href="http://stevenisekimart.in">steven iseki martin</a> for more info and future work</p>
